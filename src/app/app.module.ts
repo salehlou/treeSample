@@ -42,7 +42,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { PlatformModule } from '@angular/cdk/platform';
-import { CustomRightClickComponent } from './custom-right-click/custom-right-click.component';
 
 
 
@@ -50,7 +49,6 @@ import { CustomRightClickComponent } from './custom-right-click/custom-right-cli
   declarations: [
     AppComponent,
     TreeChecklistIconComponent,
-    CustomRightClickComponent
   ],
   imports: [
     AppRoutingModule,

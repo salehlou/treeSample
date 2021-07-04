@@ -1,11 +1,13 @@
 import { SelectionModel } from '@angular/cdk/collections';
 import { FlatTreeControl } from '@angular/cdk/tree';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
 import { TreeModel } from '../models/Tree.model';
 import { TreeData } from '../models/TreeData.model';
 import { FlatNode } from '../models/flatNode.model';
 import { MOCK_DATA } from '../models/mock-data';
+import { MatMenuTrigger } from '@angular/material/menu';
+import { RightClickItem } from '../models/right-click-item.model';
 
 @Component({
   selector: 'app-tree-checklist-icon',
@@ -142,5 +144,23 @@ export class TreeChecklistIconComponent {
     // } else {
     //   this.treeControl.collapseAll();
     // }
+  }
+  @ViewChild(MatMenuTrigger)
+  contextMenu!: MatMenuTrigger;
+  contextMenuPosition = { x: '0px', y: '0px' };
+
+  onContextMenu(event: MouseEvent, item: RightClickItem) {
+    event.preventDefault();
+    this.contextMenuPosition.x = event.clientX + 'px';
+    this.contextMenuPosition.y = event.clientY + 'px';
+    this.contextMenu.menuData = { 'item': item };
+    this.contextMenu.menu.focusFirstItem('mouse');
+    this.contextMenu.openMenu();
+  }
+  onContextMenuAction1(item: RightClickItem) {
+    alert(`Click on Action 1 for ${item.name}`);
+  }
+  onContextMenuAction2(item: RightClickItem) {
+    alert(`Click on Action 2 for ${item.name}`);
   }
 }
