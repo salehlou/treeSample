@@ -7,3 +7,9 @@
   min-height: 10px !important;
   margin-top: -5px !important;
 }
+
+.node-align {
+  display: flex;
+  align-items: flex-start;
+  align-self: flex-start
+}
