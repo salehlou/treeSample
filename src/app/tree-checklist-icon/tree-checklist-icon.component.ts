@@ -38,7 +38,7 @@ export class TreeChecklistIconComponent {
     this.checklistSelection.select(
       ...this.treeControl.dataNodes.filter((node) => node.checked)
     );
-    this.treeControl.expandAll();
+    // this.treeControl.expandAll();
   }
   getLevel = (node: FlatNode) => node.level;
   isExpandable = (node: FlatNode) => node.expandable;
