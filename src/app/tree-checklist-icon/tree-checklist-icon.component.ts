@@ -135,4 +135,12 @@ export class TreeChecklistIconComponent {
     }
     return null;
   }
+  filterChanged(filterText: string) {
+    // this.database.filter(filterText);
+    // if (filterText) {
+    //   this.treeControl.expandAll();
+    // } else {
+    //   this.treeControl.collapseAll();
+    // }
+  }
 }
