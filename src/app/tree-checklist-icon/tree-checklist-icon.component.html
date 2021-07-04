@@ -1,6 +1,6 @@
 <div dir="rtl">
    <mat-form-field>
-      <input matInput placeholder="جستجو" (input)="filterChanged('$event.target.value')">
+      <input matInput placeholder="جستجو" (input)="filterChanged($event.target.value)">
    </mat-form-field>
    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
       <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding (contextmenu)="onContextMenu($event, node)">
