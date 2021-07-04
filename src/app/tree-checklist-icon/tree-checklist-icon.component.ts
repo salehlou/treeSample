@@ -138,43 +138,16 @@ export class TreeChecklistIconComponent {
     return null;
   }
 
-  public filter(filterText: string) {
-    let filteredTreeData: TreeModel[];
-    if (filterText) {
-      console.log(this.dataSource.data);
-      filteredTreeData = this.dataSource.data.filter(d => d.name.toLocaleLowerCase().indexOf(filterText.toLocaleLowerCase()) > -1);
-      debugger;
-      Object.assign([], filteredTreeData).forEach(ftd => {
-        debugger;
-        // let str = (<string>ftd.id);
-        // while (str.lastIndexOf('.') > -1) {
-        //   const index = str.lastIndexOf('.');
-        //   str = str.substring(0, index);
-        //   if (filteredTreeData.findIndex(t => t.name === str) === -1) {
-        //     const obj = this.dataSource.data.find(d => d.name === str);
-        //     if (obj) {
-        //       filteredTreeData.push(obj);
-        //     }
-        //   }
-        // }
-      });
-    } else {
-      filteredTreeData = this.dataSource.data;
-    }
-    // Build the tree nodes from Json object. The result is a list of `TodoItemNode` with nested
-    // file node as children.
-    this.dataSource.data = this.getNodeChildren(0, MOCK_DATA);
-    // const data = this.buildFileTree(filteredTreeData, '0');
-    // Notify the change.
-    // this.dataChange.next(data);
-  }
-  filterChanged(filterText: string) {
-    this.filter(filterText);
-    if (filterText) {
-      this.treeControl.expandAll();
-    } else {
-      this.treeControl.collapseAll();
-    }
+  filterChanged(event: any) {
+
+    const filterText = event.data;
+    debugger;
+    // this.filter(filterText);
+    // if (filterText) {
+    //   this.treeControl.expandAll();
+    // } else {
+    //   this.treeControl.collapseAll();
+    // }
   }
   @ViewChild(MatMenuTrigger)
   contextMenu!: MatMenuTrigger;
