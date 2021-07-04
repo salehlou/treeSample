@@ -6,15 +6,19 @@
          </mat-form-field>
       </mat-card-header>
       <mat-card-content>
-         <p>
+         <mat-divider></mat-divider>
+
+         <p style="padding-top: 15px;">
             <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
                <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding (contextmenu)="onContextMenu($event, node)">
                   <button mat-icon-button disabled></button>
                   <mat-checkbox class="checklist-leaf-node" [checked]="checklistSelection.isSelected(node)"
                      (change)="leafItemSelectionToggle(node)">
-                     <img [src]="node.nodeIcon" alt="" class="nodeIconSize">
-                     {{node.name}}
                   </mat-checkbox>
+                  <img [src]="node.nodeIcon" alt="" class="nodeIconSize">
+                  <span style="padding-right: 5px;">
+                     {{node.name}}
+                  </span>
                </mat-tree-node>
                <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding
                   (contextmenu)="onContextMenu($event, node)">
@@ -25,13 +29,16 @@
                   </button>
                   <mat-checkbox [checked]="descendantsAllSelected(node)"
                      [indeterminate]="descendantsPartiallySelected(node)" (change)="itemSelectionToggle(node)">
-                     <img [src]="node.nodeIcon" alt="" class="nodeIconSize">
-                     {{ node.name }}
                   </mat-checkbox>
+                  <img [src]="node.nodeIcon" alt="" class="nodeIconSize">
+                  <span style="padding-right: 5px;">
+                     {{node.name}}
+                  </span>
                </mat-tree-node>
             </mat-tree>
          </p>
       </mat-card-content>
+      <mat-divider></mat-divider>
       <mat-card-actions>
          <button mat-flat-button color="primary">ذخیره</button>
       </mat-card-actions>
