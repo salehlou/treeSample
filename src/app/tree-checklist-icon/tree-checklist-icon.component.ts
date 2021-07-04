@@ -2,9 +2,9 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { Component, OnInit } from '@angular/core';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
-import { TreeModel } from './Tree.model';
-import { TreeData } from './TreeData.model';
-import { FlatNode } from './flatNode.model';
+import { TreeModel } from '../models/Tree.model';
+import { TreeData } from '../models/TreeData.model';
+import { FlatNode } from '../models/flatNode.model';
 import { MOCK_DATA } from '../models/mock-data';
 
 @Component({
