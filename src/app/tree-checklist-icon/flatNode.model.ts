@@ -3,4 +3,5 @@ export interface FlatNode {
    name: string;
    level: number;
    checked: boolean;
+   nodeIcon: string;
 }
